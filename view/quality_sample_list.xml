@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tree string="Quality Sample">
+    <field name="code"/>
+    <field name="product"/>
+    <field name="lot"/>
+    <field name="collection_date"/>
+    <field name="state"/>
+</tree>

@@ -1,0 +1,147 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:product.template,needs_sample:"
+msgid "Needs Samples"
+msgstr "Requiere muestras"
+
+msgctxt "field:quality.configuration,sample_sequence:"
+msgid "Sample Sequence"
+msgstr "Sequencia de muestras"
+
+msgctxt "field:quality.configuration.company,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:quality.configuration.company,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:quality.configuration.company,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:quality.configuration.company,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:quality.configuration.company,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:quality.configuration.company,sample_sequence:"
+msgid "Sample Sequence"
+msgstr "Sequencia de muestras"
+
+msgctxt "field:quality.configuration.company,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:quality.configuration.company,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "field:quality.sample,barcode:"
+msgid "Barcode"
+msgstr "Código de barras"
+
+msgctxt "field:quality.sample,code:"
+msgid "Code"
+msgstr "Código"
+
+msgctxt "field:quality.sample,collection_date:"
+msgid "Collection Date"
+msgstr "Fecha de recojida"
+
+msgctxt "field:quality.sample,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:quality.sample,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:quality.sample,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:quality.sample,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:quality.sample,lot:"
+msgid "Lot"
+msgstr "Lote"
+
+msgctxt "field:quality.sample,product:"
+msgid "Product"
+msgstr "Productos"
+
+msgctxt "field:quality.sample,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:quality.sample,state:"
+msgid "State"
+msgstr "Estado"
+
+msgctxt "field:quality.sample,tests:"
+msgid "Tests"
+msgstr "Tests"
+
+msgctxt "field:quality.sample,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:quality.sample,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "model:ir.action,name:act_quality_sample"
+msgid "Samples"
+msgstr "Muestras"
+
+msgctxt "model:ir.action,name:act_report_sample"
+msgid "Label"
+msgstr "Etiqueta"
+
+msgctxt "model:ir.sequence,name:sequence_sample"
+msgid "Sample"
+msgstr "Muestra"
+
+msgctxt "model:ir.sequence.type,name:sequence_type_sample"
+msgid "Quality Sample"
+msgstr "Muestra de calidad"
+
+msgctxt "model:ir.ui.menu,name:menu_quality_sample"
+msgid "Samples"
+msgstr "Muestras"
+
+msgctxt "model:quality.configuration.company,name:"
+msgid "Company Quality configuration"
+msgstr "Configuración de calidad por empresa"
+
+msgctxt "model:quality.sample,name:"
+msgid "Quality Sample"
+msgstr "Muestra de calidad"
+
+msgctxt "model:res.group,name:group_quality_control_sample"
+msgid "Quality Control Samples"
+msgstr "Muestras de controles de calidad"
+
+msgctxt "selection:quality.sample,state:"
+msgid "Done"
+msgstr "Realizado"
+
+msgctxt "selection:quality.sample,state:"
+msgid "Draft"
+msgstr "Borrador"
+
+msgctxt "view:quality.sample:"
+msgid "Done"
+msgstr "Realizado"
+
+msgctxt "view:quality.sample:"
+msgid "Quality Sample"
+msgstr "Muestra de calidad"

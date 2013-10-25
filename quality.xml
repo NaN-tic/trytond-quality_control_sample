@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+
+        <record model="res.group" id="group_quality_control_sample">
+            <field name="name">Quality Control Samples</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_quality_control_sample">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_quality_control_sample"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_quality_control_sample">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_quality_control_sample"/>
+        </record>
+        <record model="ir.ui.view" id="quality_sample_view_form">
+            <field name="model">quality.sample</field>
+            <field name="type">form</field>
+            <field name="name">quality_sample_form</field>
+        </record>
+        <record model="ir.ui.view" id="quality_sample_view_list">
+            <field name="model">quality.sample</field>
+            <field name="type">tree</field>
+            <field name="name">quality_sample_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_quality_sample">
+            <field name="name">Samples</field>
+            <field name="res_model">quality.sample</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_quality_sample_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="quality_sample_view_list"/>
+            <field name="act_window" ref="act_quality_sample"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_quality_sample_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="quality_sample_view_form"/>
+            <field name="act_window" ref="act_quality_sample"/>
+        </record>
+        <record model="ir.model.access" id="access_quality_sample">
+            <field name="model" search="[('model', '=', 'quality.sample')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_quality_sample_admin">
+            <field name="model" search="[('model', '=', 'quality.sample')]"/>
+            <field name="group" ref="group_quality_control_sample"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="product_template_view_form">
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit" ref="product.template_view_form"/>
+            <field name="name">product_template_form</field>
+        </record>
+
+          <record model="ir.rule.group" id="rule_group_quality_sample">
+            <field name="model" search="[('model', '=', 'quality.sample')]"/>
+            <field name="global_p" eval="True"/>
+          </record>
+
+          <record model="ir.rule" id="rule_quality_sample1">
+            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="rule_group" ref="rule_group_quality_sample"/>
+          </record>
+
+        <record model="ir.action.report" id="act_report_sample">
+            <field name="name">Label</field>
+            <field name="model">quality.sample</field>
+            <field name="report_name">quality.sample.report</field>
+            <field name="report">quality_control_sample/sample.jrxml</field>
+        </record>
+
+        <record model="ir.action.keyword" id="act_sample_report_keyword1">
+            <field name="action" ref="act_report_sample"/>
+            <field name="keyword">form_print</field>
+            <field name="model">quality.sample,-1</field>
+        </record>
+
+          <menuitem action="act_quality_sample" id="menu_quality_sample"
+              parent="quality_control.menu_quality_control" sequence="30"/>
+
+          <record model="ir.ui.menu-res.group"
+              id="menu_quality_control_sample_group_quality_control_sample">
+            <field name="menu" ref="menu_quality_sample"/>
+            <field name="group" ref="group_quality_control_sample"/>
+          </record>
+
+          <record model="ir.ui.menu-res.group"
+              id="menu_quality_control_sample_group_quality_control_sample_admin">
+            <field name="menu" ref="menu_quality_sample"/>
+            <field name="group" ref="group_quality_control_sample"/>
+          </record>
+
+    </data>
+</tryton>

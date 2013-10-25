@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<form string="Quality Sample">
+    <label name="collection_date"/>
+    <field name="collection_date"/>
+    <label name="code"/>
+    <field name="code"/>
+    <label name="product"/>
+    <field name="product"/>
+    <label name="lot"/>
+    <field name="lot"/>
+    <field name="tests" colspan="4"/>
+    <group colspan="4" id="buttons">
+        <label name="state"/>
+        <field name="state"/>
+        <button name="done" string="Done" icon="tryton-go-next" />
+    </group>
+</form>
