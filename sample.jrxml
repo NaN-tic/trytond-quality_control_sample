@@ -8,10 +8,10 @@
 		<![CDATA[/dat./modules/quality_control_sample/record]]>
 	</queryString>
 	<field name="product" class="java.lang.String">
-		<fieldDescription><![CDATA[/dat./modules/quality_control_sample/record/product-product/rec_name-rec_name]]></fieldDescription>
+		<fieldDescription><![CDATA[product/rec_name]]></fieldDescription>
 	</field>
 	<field name="lot" class="java.lang.String">
-		<fieldDescription><![CDATA[/dat./modules/quality_control_sample/record/lot-lot/rec_name-rec_name]]></fieldDescription>
+		<fieldDescription><![CDATA[lot/rec_name]]></fieldDescription>
 	</field>
 	<field name="barcode" class="java.lang.String">
 		<fieldDescription><![CDATA[barcode-barcode]]></fieldDescription>
@@ -35,35 +35,35 @@
 	<detail>
 		<band height="95">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="cd747e70-104b-42a0-832f-8a295d04c4c6" x="136" y="10" width="67" height="13"/>
+				<reportElement x="136" y="10" width="42" height="13" uuid="cd747e70-104b-42a0-832f-8a295d04c4c6"/>
 				<textElement verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[tr($V{L},"Product")]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="c3a49112-c6f5-40f3-9918-e96b320b86d5" x="136" y="23" width="67" height="13"/>
+				<reportElement x="136" y="23" width="42" height="13" uuid="c3a49112-c6f5-40f3-9918-e96b320b86d5"/>
 				<textElement verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[tr($V{L},"Lot")]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="0849db19-77ee-4005-937f-5e4837145ee6" x="203" y="10" width="102" height="13"/>
+				<reportElement x="178" y="10" width="127" height="13" uuid="0849db19-77ee-4005-937f-5e4837145ee6"/>
 				<textElement verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{product}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="db9cbdc4-99bd-4f0c-88f0-b929518f6b82" x="203" y="23" width="102" height="13"/>
+				<reportElement x="178" y="23" width="127" height="13" uuid="db9cbdc4-99bd-4f0c-88f0-b929518f6b82"/>
 				<textElement verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lot}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement uuid="20864f45-3d47-49bc-96a0-5765be630887" x="136" y="36" width="169" height="50"/>
+				<reportElement x="136" y="36" width="169" height="50" uuid="20864f45-3d47-49bc-96a0-5765be630887"/>
 				<jr:EAN13 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
 					<jr:codeExpression><![CDATA[$F{barcode}]]></jr:codeExpression>
 				</jr:EAN13>
