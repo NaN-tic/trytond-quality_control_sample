@@ -8,14 +8,11 @@ from trytond.pool import Pool, PoolMeta
 from trytond.modules.jasper_reports.jasper import JasperReport
 
 __all__ = ['Template', 'Sample', 'SampleReport']
-
 __metaclass__ = PoolMeta
-
 
 STATES = {
     'readonly': Eval('state') == 'done',
 }
-
 DEPENDS = ['state']
 
 
@@ -44,10 +41,10 @@ class Sample(Workflow, ModelSQL, ModelView):
         ], states=STATES, depends=DEPENDS + ['product'])
     collection_date = fields.DateTime('Collection Date', required=True,
         states=STATES, depends=DEPENDS)
-    tests = fields.One2Many('quality.test', 'document', 'Tests', readonly=True,
+    tests = fields.One2Many('quality.test', 'document', 'Tests', states=STATES,
         depends=DEPENDS)
     company = fields.Many2One('company.company', 'Company', required=True,
-        select=True)
+        select=True, states=STATES, depends=DEPENDS)
     barcode = fields.Function(fields.Char('Barcode'), 'get_barcode')
 
     @classmethod
