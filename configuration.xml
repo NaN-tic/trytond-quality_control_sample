@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tryton>
     <data>
-
         <record model="ir.ui.view" id="quality_configuration_view_form">
             <field name="model">quality.configuration</field>
             <field name="type">form</field>
             <field name="inherit"
-                 ref="quality_control.quality_configuration_form_view"/>
+                    ref="quality_control.quality_configuration_form_view"/>
             <field name="name">quality_configuration_form</field>
         </record>
 
-          <record model="ir.rule.group" id="rule_group_quality_configuration_company">
-            <field name="model" search="[('model', '=', 'quality.configuration.company')]"/>
+        <record model="ir.rule.group"
+                id="rule_group_quality_configuration_company">
+            <field name="model"
+                search="[('model', '=', 'quality.configuration.company')]"/>
             <field name="global_p" eval="True"/>
-          </record>
+        </record>
 
-          <record model="ir.rule" id="rule_quality_configuration_company1">
+        <record model="ir.rule" id="rule_quality_configuration_company1">
+            <field name="rule_group"
+                ref="rule_group_quality_configuration_company"/>
             <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
-            <field name="rule_group" ref="rule_group_quality_configuration_company"/>
-          </record>
+        </record>
 
         <record model="ir.sequence.type" id="sequence_type_sample">
             <field name="name">Quality Sample</field>
             <field name="code">quality.sample</field>
         </record>
         <record model="ir.sequence.type-res.group"
-            id="sequence_type_sample_group_admin">
+                id="sequence_type_sample_group_admin">
             <field name="sequence_type" ref="sequence_type_sample"/>
             <field name="group" ref="res.group_admin"/>
         </record>
         <record model="ir.sequence.type-res.group"
-            id="sequence_type_sample_group_sale_admin">
+                id="sequence_type_sample_group_sale_admin">
             <field name="sequence_type" ref="sequence_type_sample"/>
             <field name="group" ref="quality_control.group_quality_control_admin"/>
         </record>
@@ -39,6 +41,5 @@
             <field name="name">Sample</field>
             <field name="code">quality.sample</field>
         </record>
-
     </data>
 </tryton>
