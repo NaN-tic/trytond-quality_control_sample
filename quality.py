@@ -98,9 +98,18 @@ class Sample(Workflow, ModelSQL, ModelView):
 
         sequence = Config(1).sample_sequence
         for value in vlist:
-            if not 'code' in value:
+            if not value.get('code'):
                 value['code'] = Sequence.get_id(sequence.id)
         return super(Sample, cls).create(vlist)
+
+    @classmethod
+    def copy(cls, samples, default=None):
+        if default is None:
+            default = {}
+        else:
+            default = default.copy()
+        default['code'] = None
+        return super(Sample, cls).copy(samples, default=default)
 
 
 class SampleReport(JasperReport):
