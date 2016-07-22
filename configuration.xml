@@ -19,7 +19,9 @@
         <record model="ir.rule" id="rule_quality_configuration_company1">
             <field name="rule_group"
                 ref="rule_group_quality_configuration_company"/>
-            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="domain"
+                eval="[('company', '=', user.company.id if user.company else None)]"
+                pyson="1"/>
         </record>
 
         <record model="ir.sequence.type" id="sequence_type_sample">

@@ -115,7 +115,9 @@
         </record>
 
         <record model="ir.rule" id="rule_quality_sample1">
-            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="domain"
+                eval="[('company', '=', user.company.id if user.company else None)]"
+                pyson="1"/>
             <field name="rule_group" ref="rule_group_quality_sample"/>
         </record>
 
