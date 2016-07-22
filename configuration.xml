@@ -20,7 +20,7 @@
             <field name="rule_group"
                 ref="rule_group_quality_configuration_company"/>
             <field name="domain"
-                eval="[('company', '=', user.company.id if user.company else None)]"
+                eval="[('company', '=', Eval('user', {}).get('company', None))]"
                 pyson="1"/>
         </record>
 
