@@ -3,7 +3,7 @@
     <data>
         <record model="ir.ui.view" id="quality_configuration_view_form">
             <field name="model">quality.configuration</field>
-            <field name="type">form</field>
+            <field name="type" eval="None"/>
             <field name="inherit"
                     ref="quality_control.quality_configuration_form_view"/>
             <field name="name">quality_configuration_form</field>
