@@ -2,17 +2,17 @@
 #copyright notices and license terms.
 
 from trytond.pool import Pool
-from configuration import *
-from quality import *
+from . import configuration
+from . import quality
 
 
 def register():
     Pool.register(
-        Configuration,
-        ConfigurationCompany,
-        Template,
-        Sample,
+        configuration.Configuration,
+        configuration.ConfigurationCompany,
+        quality.Template,
+        quality.Sample,
         module='quality_control_sample', type_='model')
     Pool.register(
-        SampleReport,
+        quality.SampleReport,
         module='quality_control_sample', type_='report')

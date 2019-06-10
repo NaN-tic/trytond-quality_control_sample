@@ -6,9 +6,9 @@ from trytond.pyson import Eval
 from trytond.transaction import Transaction
 from trytond.pool import Pool, PoolMeta
 from trytond.modules.jasper_reports.jasper import JasperReport
+from functools import reduce
 
 __all__ = ['Template', 'Sample', 'SampleReport']
-__metaclass__ = PoolMeta
 
 STATES = {
     'readonly': Eval('state') == 'done',
@@ -16,7 +16,7 @@ STATES = {
 DEPENDS = ['state']
 
 
-class Template:
+class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
 
     needs_sample = fields.Boolean('Needs Samples')
@@ -56,6 +56,7 @@ class Sample(Workflow, ModelSQL, ModelView):
         cls._buttons.update({
                 'done': {
                     'invisible': Eval('state') != 'draft',
+                    'icon': 'tryton-go-next',
                     },
                  })
 

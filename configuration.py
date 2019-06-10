@@ -6,7 +6,6 @@ from trytond.pyson import Eval
 from trytond.transaction import Transaction
 
 __all__ = ['ConfigurationCompany', 'Configuration']
-__metaclass__ = PoolMeta
 
 
 class ConfigurationCompany(ModelSQL):
@@ -26,8 +25,7 @@ class ConfigurationCompany(ModelSQL):
         return Transaction().context.get('company')
 
 
-class Configuration:
-    'Quality configuration'
+class Configuration(metaclass=PoolMeta):
     __name__ = 'quality.configuration'
 
     sample_sequence = fields.Function(fields.Many2One('ir.sequence',

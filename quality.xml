@@ -9,11 +9,6 @@
             <field name="user" ref="res.user_admin"/>
             <field name="group" ref="group_quality_control_sample"/>
         </record>
-        <record model="res.user-res.group"
-            id="user_trigger_group_quality_control_sample">
-            <field name="user" ref="res.user_trigger"/>
-            <field name="group" ref="group_quality_control_sample"/>
-        </record>
 
         <!-- product.template -->
         <record model="ir.ui.view" id="product_template_view_form">
@@ -88,20 +83,16 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="False"/>
         </record>
-        <record model="ir.model.access"
-            id="access_quality_qualitative_test_line_group_sample">
-            <field name="model"
-                search="[('model', '=', 'quality.qualitative.test.line')]"/>
+        <record model="ir.model.access" id="access_quality_qualitative_test_line_group_sample">
+            <field name="model" search="[('model', '=', 'quality.qualitative.test.line')]"/>
             <field name="group" ref="group_quality_control_sample"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="False"/>
         </record>
-        <record model="ir.model.access"
-            id="access_quality_quantitative_test_line_group_sample">
-            <field name="model"
-                search="[('model', '=', 'quality.quantitative.test.line')]"/>
+        <record model="ir.model.access" id="access_quality_quantitative_test_line_group_sample">
+            <field name="model" search="[('model', '=', 'quality.quantitative.test.line')]"/>
             <field name="group" ref="group_quality_control_sample"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -110,15 +101,25 @@
         </record>
 
         <record model="ir.rule.group" id="rule_group_quality_sample">
+            <field name="name">Quality Sample</field>
             <field name="model" search="[('model', '=', 'quality.sample')]"/>
             <field name="global_p" eval="True"/>
         </record>
 
         <record model="ir.rule" id="rule_quality_sample1">
-            <field name="domain"
-                eval="[('company', '=', Eval('user', {}).get('company', None))]"
-                pyson="1"/>
+            <field name="domain" eval="[('company', '=', Eval('user', {}).get('company', None))]" pyson="1"/>
             <field name="rule_group" ref="rule_group_quality_sample"/>
+        </record>
+
+        <!-- ir.model.button -->
+        <record model="ir.model.button" id="sample_done_button">
+            <field name="name">done</field>
+            <field name="string">Done</field>
+            <field name="model" search="[('model', '=', 'quality.sample')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="sample_done_button_group_sample">
+            <field name="button" ref="sample_done_button"/>
+            <field name="group" ref="group_quality_control_sample"/>
         </record>
 
         <!-- menus -->
