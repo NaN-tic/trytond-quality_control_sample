@@ -56,7 +56,7 @@ class Sample(Workflow, ModelSQL, ModelView):
         cls._buttons.update({
                 'done': {
                     'invisible': Eval('state') != 'draft',
-                    'icon': 'tryton-go-next',
+                    'icon': 'tryton-forward',
                     },
                  })
 
