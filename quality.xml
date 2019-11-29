@@ -51,6 +51,8 @@
             <field name="model">quality.sample</field>
             <field name="report_name">quality.sample.report</field>
             <field name="report">quality_control_sample/sample.jrxml</field>
+            <field name="extension">pdf</field>
+            <field name="template_extension">jrxml</field>
         </record>
 
         <record model="ir.action.keyword" id="act_sample_report_keyword1">
