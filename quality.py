@@ -30,15 +30,15 @@ class Sample(Workflow, ModelSQL, ModelView):
     code = fields.Char('Code', select=True, readonly=True)
     state = fields.Selection([
             ('draft', 'Draft'),
-            ('done', 'Done'),
-        ], 'State', required=True, readonly=True)
+            ('done', 'Done')],
+        'State', required=True, readonly=True)
     product = fields.Many2One('product.product', 'Product', required=True,
         domain=[
             ('template.needs_sample', '=', True),
         ], states=STATES, depends=DEPENDS)
     lot = fields.Many2One('stock.lot', 'Lot', required=True, domain=[
-            ('product', '=', Eval('product')),
-        ], states=STATES, depends=DEPENDS + ['product'])
+            ('product', '=', Eval('product'))],
+        states=STATES, depends=DEPENDS + ['product'])
     collection_date = fields.DateTime('Collection Date', required=True,
         states=STATES, depends=DEPENDS)
     tests = fields.One2Many('quality.test', 'document', 'Tests', states=STATES,
@@ -78,7 +78,7 @@ class Sample(Workflow, ModelSQL, ModelView):
     def default_collection_date():
         return datetime.datetime.now()
 
-    #From python-barcode
+    # From python-barcode
     @staticmethod
     def calculate_checksum(code):
         sum_ = lambda x, y: int(x) + int(y)
