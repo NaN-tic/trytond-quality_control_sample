@@ -2,10 +2,8 @@
 # copyright notices and license terms.
 from trytond.model import ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval
+from trytond.pyson import Eval, Id
 from trytond.transaction import Transaction
-
-__all__ = ['ConfigurationCompany', 'Configuration']
 
 
 class ConfigurationCompany(ModelSQL):
@@ -17,7 +15,8 @@ class ConfigurationCompany(ModelSQL):
             'Sample Sequence', domain=[
                 ('company', 'in',
                     [Eval('context', {}).get('company', -1), None]),
-                ('code', '=', 'quality.sample'),
+                ('sequence_type', '=', Id('quality_control_sample',
+                    'sequence_type_sample')),
                 ], required=True)
 
     @staticmethod
@@ -32,7 +31,8 @@ class Configuration(metaclass=PoolMeta):
             'Sample Sequence', domain=[
                 ('company', 'in',
                     [Eval('context', {}).get('company', -1), None]),
-                ('code', '=', 'quality.sample'),
+                ('sequence_type', '=', Id('quality_control_sample',
+                    'sequence_type_sample')),
                 ], required=True),
         'get_company_config', setter='set_company_config')
 
