@@ -95,12 +95,11 @@ class Sample(Workflow, ModelSQL, ModelView):
     def create(cls, vlist):
         pool = Pool()
         Config = pool.get('quality.configuration')
-        Sequence = pool.get('ir.sequence')
 
         sequence = Config(1).sample_sequence
         for value in vlist:
             if not value.get('code'):
-                value['code'] = Sequence.get_id(sequence.id)
+                value['code'] = sequence.get()
         return super(Sample, cls).create(vlist)
 
     @classmethod
