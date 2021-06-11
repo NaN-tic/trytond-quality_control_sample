@@ -5,6 +5,7 @@
     <field name="code"/>
     <field name="product"/>
     <field name="lot"/>
-    <field name="collection_date"/>
+    <field name="collection_date" widget="date"/>
+    <field name="collection_date" widget="time"/>
     <field name="state"/>
 </tree>
