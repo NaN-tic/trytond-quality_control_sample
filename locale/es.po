@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -36,11 +36,11 @@ msgstr "Sequencia de muestras"
 
 msgctxt "field:quality.configuration.company,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:quality.configuration.company,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:quality.sample,barcode:"
 msgid "Barcode"
@@ -76,7 +76,7 @@ msgstr "Lote"
 
 msgctxt "field:quality.sample,product:"
 msgid "Product"
-msgstr "Productos"
+msgstr "Producto"
 
 msgctxt "field:quality.sample,rec_name:"
 msgid "Name"
@@ -92,11 +92,11 @@ msgstr "Tests"
 
 msgctxt "field:quality.sample,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:quality.sample,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "model:ir.action,name:act_quality_sample"
 msgid "Samples"
