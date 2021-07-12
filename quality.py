@@ -36,7 +36,7 @@ class Sample(Workflow, ModelSQL, ModelView):
         domain=[
             ('template.needs_sample', '=', True),
         ], states=STATES, depends=DEPENDS)
-    lot = fields.Many2One('stock.lot', 'Lot', required=True, domain=[
+    lot = fields.Many2One('stock.lot', 'Lot', domain=[
             ('product', '=', Eval('product'))],
         states=STATES, depends=DEPENDS + ['product'])
     collection_date = fields.DateTime('Collection Date', required=True,
@@ -87,7 +87,10 @@ class Sample(Workflow, ModelSQL, ModelView):
         return (10 - ((evensum + oddsum * 3) % 10)) % 10
 
     def get_barcode(self, name):
-        code = "%s%s%s" % (self.product.id, self.lot.number, len(self.tests))
+        if self.lot:
+            code = "%s%s%s" % (self.product.id, self.lot.number, len(self.tests))
+        else:
+            code = "%s%s" % (self.product.id, len(self.tests))
         code = code.zfill(12)[:12]
         return "%s%s" % (code, self.calculate_checksum(code))
 
