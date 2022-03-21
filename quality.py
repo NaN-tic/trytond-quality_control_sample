@@ -35,7 +35,11 @@ class Sample(Workflow, ModelSQL, ModelView):
     product = fields.Many2One('product.product', 'Product', required=True,
         domain=[
             ('template.needs_sample', '=', True),
-        ], states=STATES, depends=DEPENDS)
+        ],
+        context={
+            'company': Eval('company'),
+            },
+        states=STATES, depends=DEPENDS + ['company'])
     lot = fields.Many2One('stock.lot', 'Lot', domain=[
             ('product', '=', Eval('product'))],
         states=STATES, depends=DEPENDS + ['product'])
