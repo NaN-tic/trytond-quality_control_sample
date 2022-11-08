@@ -27,7 +27,7 @@ class Sample(Workflow, ModelSQL, ModelView):
     __name__ = 'quality.sample'
     _rec_name = 'code'
 
-    code = fields.Char('Code', select=True, readonly=True)
+    code = fields.Char('Code', readonly=True)
     state = fields.Selection([
             ('draft', 'Draft'),
             ('done', 'Done')],
@@ -48,7 +48,7 @@ class Sample(Workflow, ModelSQL, ModelView):
     tests = fields.One2Many('quality.test', 'document', 'Tests', states=STATES,
         depends=DEPENDS)
     company = fields.Many2One('company.company', 'Company', required=True,
-        select=True, states=STATES, depends=DEPENDS)
+        states=STATES, depends=DEPENDS)
     barcode = fields.Function(fields.Char('Barcode'), 'get_barcode')
 
     @classmethod
