@@ -22,6 +22,10 @@ class Template(metaclass=PoolMeta):
     needs_sample = fields.Boolean('Needs Samples')
 
 
+class Product(metaclass=PoolMeta):
+    __name__ = 'product.product'
+
+
 class Sample(Workflow, ModelSQL, ModelView):
     'Quality Sample'
     __name__ = 'quality.sample'

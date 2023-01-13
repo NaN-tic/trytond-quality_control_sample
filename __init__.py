@@ -11,6 +11,7 @@ def register():
         configuration.Configuration,
         configuration.ConfigurationCompany,
         quality.Template,
+        quality.Product,
         quality.Sample,
         module='quality_control_sample', type_='model')
     Pool.register(
