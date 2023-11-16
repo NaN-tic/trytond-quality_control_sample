@@ -41,7 +41,7 @@ class Sample(Workflow, ModelSQL, ModelView):
             ('template.needs_sample', '=', True),
         ],
         context={
-            'company': Eval('company'),
+            'company': Eval('company', -1),
             },
         states=STATES, depends=DEPENDS + ['company'])
     lot = fields.Many2One('stock.lot', 'Lot', domain=[
