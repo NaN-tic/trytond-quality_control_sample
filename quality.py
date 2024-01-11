@@ -43,16 +43,15 @@ class Sample(Workflow, ModelSQL, ModelView):
         context={
             'company': Eval('company', -1),
             },
-        states=STATES, depends=DEPENDS + ['company'])
+        states=STATES, depends=['company'])
     lot = fields.Many2One('stock.lot', 'Lot', domain=[
             ('product', '=', Eval('product'))],
-        states=STATES, depends=DEPENDS + ['product'])
+        states=STATES)
     collection_date = fields.DateTime('Collection Date', required=True,
-        states=STATES, depends=DEPENDS)
-    tests = fields.One2Many('quality.test', 'document', 'Tests', states=STATES,
-        depends=DEPENDS)
+        states=STATES)
+    tests = fields.One2Many('quality.test', 'document', 'Tests', states=STATES)
     company = fields.Many2One('company.company', 'Company', required=True,
-        states=STATES, depends=DEPENDS)
+        states=STATES)
     barcode = fields.Function(fields.Char('Barcode'), 'get_barcode')
 
     @classmethod
