@@ -9,7 +9,7 @@
 
         <record model="ir.rule.group" id="rule_group_quality_configuration_company">
             <field name="name">Quality Configuration Company</field>
-            <field name="model" search="[('model', '=', 'quality.configuration.company')]"/>
+            <field name="model">quality.configuration.company</field>
             <field name="global_p" eval="True"/>
         </record>
         <record model="ir.rule" id="rule_quality_configuration_company1">
