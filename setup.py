@@ -10,9 +10,9 @@ from configparser import ConfigParser
 MODULE = 'quality_control_sample'
 PREFIX = 'nantic'
 MODULE2PREFIX = {
-    'quality_control',
-    'jasper_reports',
-    'stock_lot_deactivatable',
+    'quality_control': 'nantic',
+    'jasper_reports': 'nantic',
+    'stock_lot_deactivatable': 'nantic',
 }
 
 
@@ -81,7 +81,7 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         ],
     package_data={
         'trytond.modules.%s' % MODULE: (info.get('xml', [])
-            + ['tryton.cfg', 'locale/*.po', 'tests/*.rst']),
+            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'tests/*.rst']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
