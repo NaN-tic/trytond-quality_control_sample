@@ -1,0 +1,62 @@
+@page {
+    size: 38mm 24mm;
+    margin: 0;
+}
+
+html,
+body {
+    width: 38mm;
+    height: 24mm;
+    margin: 0;
+    padding: 0;
+}
+
+body.main-report {
+    width: 38mm;
+    height: 24mm;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+.label {
+    box-sizing: border-box;
+    width: 38mm;
+    height: 24mm;
+    padding: 2mm 2.2mm 1.4mm 2.2mm;
+}
+
+.label-row {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.label-main {
+    font-size: 7pt;
+    line-height: 1.15;
+}
+
+.label-product {
+    font-weight: 600;
+}
+
+.label-tests {
+    margin-left: 2mm;
+}
+
+.label-lot {
+    margin-top: 0.6mm;
+    font-size: 7pt;
+    line-height: 1.1;
+}
+
+.label-barcode {
+    display: block;
+    width: 24mm;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1mm;
+}
