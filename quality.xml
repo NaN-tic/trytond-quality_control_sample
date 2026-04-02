@@ -50,9 +50,9 @@
             <field name="name">Label</field>
             <field name="model">quality.sample</field>
             <field name="report_name">quality.sample.report</field>
-            <field name="report">quality_control_sample/sample.jrxml</field>
+            <field name="report" eval="None"/>
             <field name="extension">pdf</field>
-            <field name="template_extension">jrxml</field>
+            <field name="template_extension">html</field>
         </record>
 
         <record model="ir.action.keyword" id="act_sample_report_keyword1">
