@@ -4,11 +4,6 @@
         <record model="res.group" id="group_quality_control_sample">
             <field name="name">Quality Control Samples</field>
         </record>
-        <record model="res.user-res.group"
-            id="user_admin_group_quality_control_sample">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_quality_control_sample"/>
-        </record>
 
         <!-- product.template -->
         <record model="ir.ui.view" id="product_template_view_form">

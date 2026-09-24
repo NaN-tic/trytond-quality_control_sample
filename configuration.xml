@@ -22,10 +22,6 @@
         <record model="ir.sequence.type" id="sequence_type_sample">
             <field name="name">Quality Sample</field>
         </record>
-        <record model="ir.sequence.type-res.group" id="sequence_type_sample_group_admin">
-            <field name="sequence_type" ref="sequence_type_sample"/>
-            <field name="group" ref="res.group_admin"/>
-        </record>
         <record model="ir.sequence.type-res.group" id="sequence_type_sample_group_sale_admin">
             <field name="sequence_type" ref="sequence_type_sample"/>
             <field name="group" ref="quality_control.group_quality_control_admin"/>
